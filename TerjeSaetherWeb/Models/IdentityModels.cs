@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using TerjeSaetherWeb.Models;
 
 namespace TerjeSaetherWeb.Models
 {
@@ -29,5 +30,19 @@ namespace TerjeSaetherWeb.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Song> Song { get; set; }
+
+        public DbSet<Release> Releases { get; set; }
+
+        public DbSet<BlogPost> BlogPosts { get; set; }
+
+        public DbSet<SongToRelease> SongToReleases { get; set; }
+
+        public DbSet<Image> Images { get; set; }
+
+        public DbSet<Soundcloudlink> Soundcloudlinks { get; set; }
+
+        public DbSet<FrontPageBox> FrontPageBoxes { get; set; }
     }
 }

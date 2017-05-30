@@ -1,0 +1,114 @@
+﻿@model TerjeSaetherWeb.Models.Song
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add song</h2>
+
+@using (Html.BeginForm("Create", "Songs", FormMethod.Post, new
+{
+    enctype = "multipart/form-data",
+    @class = "create-song"
+}))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShowOnFrontpage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShowOnFrontpage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShowOnFrontpage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-push-2">
+                <input type="file" class="control-label" id="ImageUrl" name="ImageUrl" accept="image/*" onchange="loadFile(event)" data-multiple-caption="{count} files selected" >
+                <label for="imageUrl">
+                    <strong>Choose a image </strong><span class="glyphicon glyphicon-open"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-push-2">
+                <input type="file" class="control-label" id="audioUrl" name="AudioUrl" accept="audio/*" >
+                <label for="audioUrl">
+                    <strong>Choose a song </strong><span class="glyphicon glyphicon-open"></span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="col-md-12">
+    <img src="" class="img-responsive" id="output" alt="" />
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            //$('.file-upload-text').text("");
+        };
+
+        var inputs = document.querySelectorAll('.inputfile');
+        Array.prototype.forEach.call(inputs, function (input) {
+            //var label = input.nextElementSibling,
+            var label = findElementById('file-upload-text'),
+                //var label = document.getElementsByClassName('file-upload-text'),
+                labelVal = label.innerHTML;
+
+            input.addEventListener('change', function (e) {
+                var fileName = '';
+
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName)
+                    label.querySelector('span').innerHTML = fileName;
+                else
+                    label.innerHTML = labelVal;
+            });
+        });
+    </script>
+}

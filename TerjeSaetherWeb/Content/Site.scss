@@ -1,0 +1,186 @@
+﻿$blue : #1b38f8;
+$pink : #b39ae3;
+$darkPink: #d79ae3;
+
+@import 'bootstrap-sass-3.3.7/assets/stylesheets/_bootstrap.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+    //padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.full-width-input input, .full-width-input select, .full-width-input textarea {
+    max-width: 100%;
+}
+
+.bottom-air-1 {
+    margin-bottom: 30px;
+}
+
+.pink {
+    background: $pink;
+}
+
+.dark-pink {
+    background: $darkPink;
+}
+
+.dark-pink-link a {
+    color: $darkPink;
+}
+
+/* Navbar Customs */
+
+.navbar {
+    height: 145px;   
+    border: none;
+}
+
+.nav {
+    //margin-top: 77px;
+    padding-top: 47px;
+}
+
+div.navbar.navbar-default ul a {
+    color: #000;
+    font-weight: bold;
+    text-transform:uppercase;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    
+}
+
+div.navbar.navbar-default ul a:hover {
+    color: #080808;
+    border-top: 2px solid $blue;
+    margin-top: -2px;
+}
+div.navbar .dropdown ul a:hover {
+    color: #080808;
+    border: none;
+    margin-top: 0;
+}
+
+.login-status {
+    float: left;
+    margin-top: 6px;
+    margin-left: -30px;
+    font-size: 0.8em;
+}
+
+.login-status li { 
+    display: inline;
+}
+
+.dropdown-menu {
+    //position: absolute;
+    margin-right: -90px;
+    
+}
+
+.navbar-logo {
+    padding-top: 30px;
+    padding-left: 20px;    
+}
+
+/* FANCY INPUT */
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1em;
+    font-weight: 700;
+    padding: 10px;
+    color: white;
+    background-color: #6298b2;
+    display: inline-block;
+    cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile:focus + label {
+    outline: 1px dotted #ca2e2e;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+/* END FANCY INPUT */
+
+.front-box {
+    height: 430px;
+    //overflow: hidden;
+    position: relative;
+}
+.front-box-inner:hover {
+    //opacity: 0.5;
+}
+.front-box-inner:hover .front-box-text {
+    top: 10px;
+}
+.front-box-inner:hover .front-box-inner-image {
+    opacity: 0.3;
+}
+.front-box div {
+    
+}
+.front-box-text {
+    padding: 10px;
+    background:#fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-bottom: 10px;
+    top: -50px;
+    z-index: 1100;
+    position: absolute;
+    transition: 500ms all;
+    
+}
+.front-box-inner {
+    padding: 30px;
+}
+.front-box-inner-image {
+    transition: 500ms all;
+    padding-top: 20px;
+    
+}
+
+.front-box-wrapper {
+    margin-top: 30px;
+}
+
+
+

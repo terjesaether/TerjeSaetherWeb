@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,15 +17,44 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand hidden" })
+                <div class="col-md-7">
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand hidden" })
+                    <img src="~/Images/Terje_logo_header_H150.png" class="navbar-logo img-responsive" alt="Alternate Text" />
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+               
+                    
+                
+                <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Music", "About", "Home")</li>*@
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Releases</a></li>
+                            <li>@Html.ActionLink("Album", "Album", "Home")</li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Soundcloudlinks", "Index", "Soundcloudlinks")</li>
+                            <li><a href="#">Releases</a></li>
+                            <li>@Html.ActionLink("Frontbox", "Index", "FrontPageBoxes")</li>
+                            <li>@Html.ActionLink("Songs", "Index", "Songs")</li>
+                            <li><a href="#">Blog</a></li>                            
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Web Dev", "About", "Home")</li>
+                    @*<li>@Html.ActionLink("Discography", "About", "Home")</li>*@
+                    <li>@Html.ActionLink("About", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
@@ -33,7 +62,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Terje Saether</p>
         </footer>
     </div>
 

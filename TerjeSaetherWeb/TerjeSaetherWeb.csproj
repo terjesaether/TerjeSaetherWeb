@@ -189,29 +189,207 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FrontPageBoxesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SongsController.cs" />
+    <Compile Include="Controllers\SoundcloudlinksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705211950596_InitialCreate.cs" />
+    <Compile Include="Migrations\201705211950596_InitialCreate.Designer.cs">
+      <DependentUpon>201705211950596_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231241442_Init.cs" />
+    <Compile Include="Migrations\201705231241442_Init.Designer.cs">
+      <DependentUpon>201705231241442_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231247384_AddedProps.cs" />
+    <Compile Include="Migrations\201705231247384_AddedProps.Designer.cs">
+      <DependentUpon>201705231247384_AddedProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231342074_AddedRequired.cs" />
+    <Compile Include="Migrations\201705231342074_AddedRequired.Designer.cs">
+      <DependentUpon>201705231342074_AddedRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231356402_FixedNamespaces.cs" />
+    <Compile Include="Migrations\201705231356402_FixedNamespaces.Designer.cs">
+      <DependentUpon>201705231356402_FixedNamespaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231405203_Images.cs" />
+    <Compile Include="Migrations\201705231405203_Images.Designer.cs">
+      <DependentUpon>201705231405203_Images.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251538239_AddedLink.cs" />
+    <Compile Include="Migrations\201705251538239_AddedLink.Designer.cs">
+      <DependentUpon>201705251538239_AddedLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251541083_AddedBuyLinks.cs" />
+    <Compile Include="Migrations\201705251541083_AddedBuyLinks.Designer.cs">
+      <DependentUpon>201705251541083_AddedBuyLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251545209_AddedBuyLinks2.cs" />
+    <Compile Include="Migrations\201705251545209_AddedBuyLinks2.Designer.cs">
+      <DependentUpon>201705251545209_AddedBuyLinks2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705302203587_AddedSouncloudlinks.cs" />
+    <Compile Include="Migrations\201705302203587_AddedSouncloudlinks.Designer.cs">
+      <DependentUpon>201705302203587_AddedSouncloudlinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BlogPost.cs" />
+    <Compile Include="Models\FrontPageBox.cs" />
+    <Compile Include="Models\HelperMethods.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PostType.cs" />
+    <Compile Include="Models\Release.cs" />
+    <Compile Include="Models\Song.cs" />
+    <Compile Include="Models\SongToRelease.cs" />
+    <Compile Include="Models\Soundcloudlink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap-sprockets.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\affix.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\alert.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\button.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\carousel.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\collapse.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\dropdown.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\modal.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\popover.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\scrollspy.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\tab.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\tooltip.js" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\javascripts\bootstrap\transition.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="Content\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Big_M.png" />
+    <Content Include="Images\big_W.png" />
+    <Content Include="Images\Terje_logo_60.png" />
+    <Content Include="Images\Terje_logo_header_H150.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\images\.keep" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_alerts.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_badges.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_button-groups.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_buttons.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_carousel.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_close.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_code.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_component-animations.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_forms.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_grid.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_input-groups.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_labels.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_list-group.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_media.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_mixins.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_modals.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_navbar.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_navs.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_normalize.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_pager.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_pagination.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_panels.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_popovers.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_print.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_tables.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_theme.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_tooltip.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_type.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_utilities.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_variables.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\bootstrap\_wells.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\_bootstrap-compass.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\_bootstrap-mincer.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\_bootstrap-sprockets.scss" />
+    <Content Include="Content\bootstrap-sass-3.3.7\assets\stylesheets\_bootstrap.scss" />
+    <Content Include="Content\Site.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\jquery-ui-1.12.1\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -257,24 +435,74 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Songs\Create.cshtml" />
+    <Content Include="Views\Songs\Delete.cshtml" />
+    <Content Include="Views\Songs\Details.cshtml" />
+    <Content Include="Views\Songs\Edit.cshtml" />
+    <Content Include="Views\Songs\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminSongsMenu.cshtml" />
+    <Content Include="Views\FrontPageBoxes\Create.cshtml" />
+    <Content Include="Views\FrontPageBoxes\Delete.cshtml" />
+    <Content Include="Views\FrontPageBoxes\Details.cshtml" />
+    <Content Include="Views\FrontPageBoxes\Edit.cshtml" />
+    <Content Include="Views\FrontPageBoxes\Index.cshtml" />
+    <Content Include="Views\Home\WebDev.cshtml" />
+    <Content Include="Views\Soundcloudlinks\Create.cshtml" />
+    <Content Include="Views\Soundcloudlinks\Delete.cshtml" />
+    <Content Include="Views\Soundcloudlinks\Details.cshtml" />
+    <Content Include="Views\Soundcloudlinks\Edit.cshtml" />
+    <Content Include="Views\Soundcloudlinks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705211950596_InitialCreate.resx">
+      <DependentUpon>201705211950596_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231241442_Init.resx">
+      <DependentUpon>201705231241442_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231247384_AddedProps.resx">
+      <DependentUpon>201705231247384_AddedProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231342074_AddedRequired.resx">
+      <DependentUpon>201705231342074_AddedRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231356402_FixedNamespaces.resx">
+      <DependentUpon>201705231356402_FixedNamespaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231405203_Images.resx">
+      <DependentUpon>201705231405203_Images.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251538239_AddedLink.resx">
+      <DependentUpon>201705251538239_AddedLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251541083_AddedBuyLinks.resx">
+      <DependentUpon>201705251541083_AddedBuyLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251545209_AddedBuyLinks2.resx">
+      <DependentUpon>201705251545209_AddedBuyLinks2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705302203587_AddedSouncloudlinks.resx">
+      <DependentUpon>201705302203587_AddedSouncloudlinks.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

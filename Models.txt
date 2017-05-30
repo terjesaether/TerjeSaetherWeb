@@ -1,0 +1,54 @@
+Release
+	ReleaseId Guid
+	ReleaseName String
+	ReleaseDate DateTime
+	CoverImage Image
+	CoverImageData Byte[]
+	List<Song> Songs
+
+Song
+	SongId Guid
+	Timestamp DateTime
+	SongName String
+	AudioUrl String
+	CoverImageData Byte[]
+
+public class SongToRelease
+    {
+        public int SongToReleaseId { get; set; }
+        public int SongId { get; set; }
+        public int ReleaseId { get; set; }
+        public virtual Song Song { get; set; }
+        public virtual Release Release { get; set; }
+    }
+
+Image
+	ImageId Guid
+	ImageUrl String
+	Data Byte[]
+	Public virtual Release
+
+BlogPost
+	BlogPostId Guid
+	Title String
+	Content String
+	Timestamp DateTime
+	User ApplicationUser
+	Public virtual PostType
+	public virtual Release Release
+	
+
+PostType
+	PostTypeId
+	PostTypeName
+
+FrontPageBox
+	Id
+	Title	
+	Content
+	Image
+	ContentId
+	
+
+Frontpagebox har noen faste felter + link til blogpost. Blogpost har en del eventuelle props, som liste med linker til souncloud, linker til beatport og spotify og nettsiden hvis det er eksempel på jobb. Fast er tittel og content.
+	
